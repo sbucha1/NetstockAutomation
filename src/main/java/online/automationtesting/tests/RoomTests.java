@@ -65,6 +65,7 @@ public class RoomTests extends Utilities {
 
         }
 
+        selectCalendarBookingDates();
         homePage.clickBookButton();
 
         validateText(homePage.getEmailErrorText(), "must not be empty");
@@ -82,15 +83,7 @@ public class RoomTests extends Utilities {
         homePage.enterEmail("Sheldon@mailme.com");
         homePage.enterPhone("01189652177");
 
-        WebElement startDateElement = driver.findElement(By.xpath("//button[contains(text(),'08')]"));
-        WebElement endDateElement = driver.findElement(By.xpath("//button[contains(text(),'10')]"));
-
-        Actions act = new Actions(driver);
-        act.dragAndDrop(startDateElement, endDateElement)
-                .release()
-                .pause(5000)
-                .build()
-                .perform();
+        selectCalendarBookingDates();
 
         homePage.clickBookButton();
 
@@ -106,6 +99,25 @@ public class RoomTests extends Utilities {
     @AfterClass
     public void tearDown() {
         ExtentReport.flushReport();
+    }
+
+    public void selectCalendarBookingDates() {
+        WebElement startDateElement = driver.findElement(By.xpath("//button[contains(text(),'15')]"));
+        WebElement endDateElement = driver.findElement(By.xpath("//button[contains(text(),'23')]"));
+
+        // Perform left-click and drag action
+        Actions actions = new Actions(driver);
+        actions
+                .clickAndHold(startDateElement)
+                .moveToElement(startDateElement)
+                .moveByOffset(20,80)
+                .dragAndDrop(startDateElement,endDateElement)
+                .release()
+                .build()
+                .perform() ;
+
+
+
     }
 
 }

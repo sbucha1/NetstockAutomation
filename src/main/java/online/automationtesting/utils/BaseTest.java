@@ -1,4 +1,4 @@
-package online.automationtesting;
+package online.automationtesting.utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeSuite;
 
 public class BaseTest {
 
-    public WebDriver driver;
+    private WebDriver driver;
 
     @BeforeSuite
     public void setUp() {
