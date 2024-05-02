@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RoomBookingSuite">
+
+    <test name="RoomBookingTestSuite">
+        <classes>
+            <class name="online.automationtesting.tests.RoomTests">
+                <methods>
+<!--                    <include name="testSuccessfulBooking" />-->
+                    <include name="testEmailIsMissing" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
