@@ -10,7 +10,7 @@
 3. **Integrated Development Environment (IDE):**
    Use an IDE such as IntelliJ IDEA or Eclipse. Make sure your IDE has TestNG and Maven integration for seamless project setup and execution.
 
-## Steps:
+## Steps to setup project:
 
 1. **Clone the Project:**
    Clone the project repository from your version control system (e.g., GitHub) to your local machine.
@@ -21,11 +21,12 @@
 3. **Resolve Dependencies:**
    Maven should automatically resolve project dependencies (Selenium, TestNG, Extent Reports) defined in the `pom.xml` file. If not, you may need to manually update Maven dependencies.
 
-4. **Configure TestNG XML:**
-   Create a TestNG XML file (`testng.xml`) to define test suites, test classes, and test methods to execute. Specify the classes and methods as per your requirements.
-
-5. **Run the Tests:**
-   Run the tests by right-clicking on the TestNG XML file and selecting "Run As" > "TestNG Suite" (in IntelliJ IDEA) or "Run" > "Run As TestNG Suite" (in Eclipse).
+## How to run tests
+1. **There are several ways to run the tests**
+   Run the tests by right-clicking on the TestNG XML file located under src/test/java/online/automationtesting/testng.xml and selecting "Run As" > "TestNG Suite" (in IntelliJ IDEA) or "Run" > "Run As TestNG Suite" (in Eclipse).
+   Or Navigate to the test class located in this path src/main/java/online/automationtesting/tests/RoomTests.java and right-click on the RoomsTests class and select "Run RoomTests"
+   Or right-click on the method name inside the RoomTests class and click "Run" to run individual tests
+   
 
 6. **View Test Results:**
    After test execution, TestNG generates a detailed HTML report in the `test-output` directory. Open the HTML report in a web browser to view the test results, including test pass/fail status, logs, and screenshots (if configured).
