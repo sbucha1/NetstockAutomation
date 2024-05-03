@@ -56,11 +56,15 @@ public class HomePage {
     }
 
     protected WebElement getEmailErrorMessage() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div/div[4]/div/div[2]/div[3]/div[5]/p[3]")));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div/div[4]/div/div[2]/div[3]/div[5]/p")));
+    }
+
+    protected WebElement getAlertDangerMessage() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='alert alert-danger']")));
     }
 
     protected WebElement getSuccessfulMessage() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div/div[5]/div[2]/div/h2")));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[4]//h3")));
     }
 
     public WebElement getCalendarDay() {
@@ -72,10 +76,17 @@ public class HomePage {
         return driver.findElement(By.xpath("//button[contains(text(),'Book this room')]"));
     }
 
+    protected WebElement getSuccessfulBookingCloseButton() {
+        return driver.findElement(By.xpath("//button[text()='Close']]"));
+    }
+
     public void clickBookThisRoomButton() {
         getBookThisRoomButton().click();
     }
 
+    public void clickSuccessfulBookingCloseButton() {
+        getSuccessfulBookingCloseButton().click();
+    }
     public void enterFirstName(String name) {
         getFirstNameField().sendKeys(name);
     }
@@ -107,6 +118,11 @@ public class HomePage {
 
     public String getEmailErrorText() {
         return getEmailErrorMessage().getText();
+
+    }
+
+    public String getAlertDangerText() {
+        return getAlertDangerMessage().getText();
 
     }
 
